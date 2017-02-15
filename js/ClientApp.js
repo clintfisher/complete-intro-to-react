@@ -1,30 +1,39 @@
-/*
-    createClass - you are creating a blueprint for a new type
-        of component, and that is a new type of element that i can
-        render out to the DOM. i can render MyFirstComponent 15 times
-        and get 15 divs with h1's inside. its a blueprint for stamping
-        out MyFirstComponents.
-    createElement - is 1 stamp. its creating 1 instance of that
-        particular new element.
+var div = React.DOM.div
+var h1 = React.DOM.h1
 
-    components in React are nothing but functions - thats the mapping
-    that you need to get into your head. a component, a tag, an element -
-    everything is just a function call.
-*/
-var MyFirstComponent = React.createClass({
-    render() {
+var MyTitle = React.createClass({
+    render: function () {
         return(
-            /*  React.DOM is a helper method (a thin wrapper to createElement):
-                first param is for attributes (class etc, null for nothing,
-                or empty object {})
-                second param is for content (what goes inside the element)
-                you can also use React.createElement('div', null, ...)
-                */
-            React.DOM.div(null,
-                React.DOM.h1(null, 'This is my first component!'))
+            div(null,
+                h1(null, 'check out this component!')
+            )
         )
     }
 });
-// now we need to put MyFirstComponent onto the DOM because
-// nothing has happened yet.
-ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'));
+
+/*
+    make a factory method that is the same as the div method
+    the div method is a convenience, helper method, instead of having
+    to do React.createElement('div')
+    this makes a factory method for whatever components you've created.
+    so we've passed it the MyTitle component and it gives us back a
+    factory method so we can call it, its a convenience method.
+*/
+var MyTitleFactory = React.createFactory(MyTitle)
+
+// left initial React.createElement(MyTitle) in as how we did it first pass
+
+var MyFirstComponent = React.createClass({
+    render() {
+        return(
+            div(null,
+                React.createElement(MyTitle),
+                MyTitleFactory(null),
+                MyTitleFactory(null),
+                MyTitleFactory(null)
+            )
+        )
+    }
+});
+
+ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'))
