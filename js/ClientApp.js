@@ -5,7 +5,7 @@ var MyTitle = React.createClass({
     render: function () {
         return(
             div(null,
-                h1(null, this.props.title)
+                h1({style: {color: this.props.color, fontWeight: '500'} }, this.props.title)
             )
         )
     }
@@ -26,10 +26,10 @@ var MyFirstComponent = React.createClass({
     render() {
         return(
             div(null,
-                MyTitleFactory({title: 'props are the best'}),
-                MyTitleFactory({title: 'semicolons are the worst'}),
-                MyTitleFactory({title: 'jklol its ok if you like semicolons'}),
-                MyTitleFactory({title: 'im out of ideas'})
+                MyTitleFactory({title: 'props are the best', color: 'tomato'}),
+                MyTitleFactory({title: 'semicolons are the worst', color: 'peru'}),
+                MyTitleFactory({title: 'jklol its ok if you like semicolons', color: 'mediumaquamarine'}),
+                MyTitleFactory({title: 'im out of ideas', color: 'blanchedalmond'})
             )
         )
     }
