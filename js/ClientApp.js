@@ -1,6 +1,30 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { BrowserRouter } from 'react-router'
-import App from './App'
+/*
+    createClass - you are creating a blueprint for a new type
+        of component, and that is a new type of element that i can
+        render out to the DOM. i can render MyFirstComponent 15 times
+        and get 15 divs with h1's inside. its a blueprint for stamping
+        out MyFirstComponents.
+    createElement - is 1 stamp. its creating 1 instance of that
+        particular new element.
 
-render(<BrowserRouter><App /></BrowserRouter>, document.getElementById('app'))
+    components in React are nothing but functions - thats the mapping
+    that you need to get into your head. a component, a tag, an element -
+    everything is just a function call.
+*/
+var MyFirstComponent = React.createClass({
+    render() {
+        return(
+            /*  React.DOM is a helper method (a thin wrapper to createElement):
+                first param is for attributes (class etc, null for nothing,
+                or empty object {})
+                second param is for content (what goes inside the element)
+                you can also use React.createElement('div', null, ...)
+                */
+            React.DOM.div(null,
+                React.DOM.h1(null, 'This is my first component!'))
+        )
+    }
+});
+// now we need to put MyFirstComponent onto the DOM because
+// nothing has happened yet.
+ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'));
