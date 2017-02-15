@@ -7,7 +7,9 @@
 
 <body>
 <div id="app">React has not yet rendered</div>
+<!-- this creates a global React variable when you include this script -->
 <script src="node_modules/react/dist/react.js"></script>
+<!-- this creates a global ReactDOM variable when you include this script -->
 <script src="node_modules/react-dom/dist/react-dom.js"></script>
 <script>
     /*
@@ -19,6 +21,9 @@
         createElement - is 1 stamp. its creating 1 instance of that
             particular new element.
 
+        components in React are nothing but functions - thats the mapping
+        that you need to get into your head. a component, a tag, an element -
+        everything is just a function call.
     */
     var MyFirstComponent = React.createClass({
         render() {
