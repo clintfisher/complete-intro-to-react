@@ -18,10 +18,9 @@ var MyTitle = React.createClass({
     this makes a factory method for whatever components you've created.
     so we've passed it the MyTitle component and it gives us back a
     factory method so we can call it, its a convenience method.
+    - left initial React.createElement(MyTitle) in as how we did it first pass
 */
 var MyTitleFactory = React.createFactory(MyTitle)
-
-// left initial React.createElement(MyTitle) in as how we did it first pass
 
 var MyFirstComponent = React.createClass({
     render() {
