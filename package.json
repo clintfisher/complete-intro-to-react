@@ -6,7 +6,7 @@
   "author": "Brian Holt <btholt@gmail.com>",
   "license": "MIT",
   "scripts": {
-
+    "lint": "standard"
   },
   "dependencies": {
     "axios": "0.15.2",
@@ -21,7 +21,8 @@
     "react-redux": "4.4.0",
     "react-router": "4.0.0-alpha.5",
     "redux": "3.3.1",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "standard": "^8.6.0"
   },
   "devDependencies": {
     "babel-core": "6.16.0",
