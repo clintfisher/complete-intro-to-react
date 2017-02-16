@@ -8,11 +8,6 @@ var MyTitleFactory = React.createFactory(MyTitle)
 
 var MyFirstComponent = React.createClass({
 
-  propTypes: {
-    title: React.PropTypes.string,
-    color: React.PropTypes.string
-  },
-
   render () {
     return (
       div(null,
