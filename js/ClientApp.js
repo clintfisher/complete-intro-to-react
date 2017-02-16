@@ -7,8 +7,14 @@ var div = React.DOM.div
 var MyTitleFactory = React.createFactory(MyTitle)
 
 var MyFirstComponent = React.createClass({
-  render() {
-    return(
+
+  propTypes: {
+    title: React.PropTypes.string,
+    color: React.PropTypes.string
+  },
+
+  render () {
+    return (
       div(null,
         MyTitleFactory({title: 'props are the best', color: 'tomato'}),
         MyTitleFactory({title: 'semicolons are the worst', color: 'peru'}),
