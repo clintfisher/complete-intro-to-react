@@ -5,7 +5,13 @@ const Search = React.createClass({
   render () {
     return (
       <div className='search'>
-        <pre><code>{JSON.stringify(preload, null, 4)}</code></pre>
+        {preload.shows.map((show) => {
+          return (
+            <div className='show-card'>
+              <img src={`/public/img/posters/${show.poster}`} />
+            </div>
+          )
+        })}
       </div>
     )
   }
