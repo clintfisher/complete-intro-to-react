@@ -1,7 +1,7 @@
 import {SET_SEARCH_TERM} from './actions'
 
 const DEFAULT_STATE = {
-  searchTerm: 'eva is hot!'
+  searchTerm: ''
 }
 
 const setSearchTerm = (state, action) => {
