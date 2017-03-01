@@ -1,9 +1,8 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import {Link} from 'react-router'
-import {setSearchTerm} from './actionCreators'
-
-const {string, func, object} = React.PropTypes
+import { connect } from 'react-redux'
+import { Link } from 'react-router'
+import { setSearchTerm } from './actionCreators'
+const { string, func, object } = React.PropTypes
 
 const Landing = React.createClass({
   contextTypes: {
@@ -11,10 +10,10 @@ const Landing = React.createClass({
   },
   propTypes: {
     searchTerm: string,
-    dispatch: func
+    dispatchSetSearchTerm: func
   },
   handleSearchTermChange (event) {
-    this.props.dispatch(setSearchTerm(event.target.value))
+    this.props.dispatchSetSearchTerm(event.target.value)
   },
   handleSearchSubmit (event) {
     event.preventDefault()
@@ -39,4 +38,12 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Landing)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatchSetSearchTerm (searchTerm) {
+      dispatch(setSearchTerm(searchTerm))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Landing)
