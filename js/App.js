@@ -32,7 +32,8 @@ const App = () => {
           pattern='/details/:id'
           component={(props) => {
             const shows = preload.shows.filter((show) => props.params.id === show.imdbID)
-            return <AsyncRoute props={Object.assign({show: shows[0]}, props)}
+            return <AsyncRoute
+              props={Object.assign({show: shows[0]}, props)}
               loadingPromise={System.import('./Details')} />
           }}
         />
