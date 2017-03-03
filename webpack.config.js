@@ -14,11 +14,7 @@ module.exports = {
     historyApiFallback: true
   },
   resolve: {
-    extensions: ['.js', '.json'],
-    alias: {
-      react: 'preact-compat',
-      'react-dom': 'preact-compat'
-  },
+    extensions: ['.js', '.json']
   },
   stats: {
     colors: true,
@@ -38,10 +34,7 @@ module.exports = {
         loader: 'json-loader'
       },
       {
-        include: [
-          path.resolve(__dirname, 'js'),
-          path.resolve('node_modules/preact-compat/src')
-        ],
+        include: path.resolve(__dirname, 'js'),
         test: /\.js$/,
         loader: 'babel-loader'
       },
