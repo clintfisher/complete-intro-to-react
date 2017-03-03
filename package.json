@@ -13,7 +13,8 @@
     "test": "NODE_ENV=test jest",
     "update-test": "npm run test -- -u",
     "cover": "npm run test -- --coverage",
-    "start": "NODE_ENV=server node server.js"
+    "start": "NODE_ENV=server node server.js",
+    "prod": "NODE_ENV=production webpack -p"
   },
   "dependencies": {
     "axios": "0.15.2",
