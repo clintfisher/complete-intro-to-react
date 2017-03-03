@@ -4,7 +4,7 @@ const webpack = require('webpack')
 module.exports = {
   context: __dirname,
   entry: './js/ClientApp.js',
-  devtool: 'eval',
+  // devtool: 'cheap-module-source-map',
   output: {
     path: path.join(__dirname, '/public'),
     filename: 'bundle.js',
@@ -14,13 +14,6 @@ module.exports = {
     publicPath: '/public/',
     historyApiFallback: true
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: true
-      }
-    })
-  ],
   resolve: {
     extensions: ['.js', '.json']
   },
